@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "kroki": {
+      "command": "/path/to/mcp-kroki-go",
+      "env": {
+        "KROKI_SERVER_URL": "https://kroki.io"
+      }
+    }
+  }
+}
