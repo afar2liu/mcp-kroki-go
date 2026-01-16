@@ -28,6 +28,8 @@ var (
 		"excalidraw", "erd", "svgbob", "nomnoml", "wavedrom",
 		"blockdiag", "seqdiag", "actdiag", "nwdiag", "packetdiag",
 		"rackdiag", "umlet", "ditaa", "vega", "vegalite",
+		"bpmn", "bytefield", "d2", "dbml", "pikchr",
+		"structurizr", "symbolator", "tikz", "wireviz",
 	}
 	validOutputFormats = []string{"svg", "png", "pdf", "jpeg", "base64"}
 )
@@ -346,12 +348,12 @@ func main() {
 
 	mcp.AddTool(server, &mcp.Tool{
 		Name:        "generate_diagram_url",
-		Description: "Generate a URL for a diagram using Kroki.io. This tool takes Mermaid diagram code or other supported diagram formats and returns a URL to the rendered diagram. The URL can be used to display the diagram in web browsers or embedded in documents.",
+		Description: "Generate a URL for a diagram using Kroki.io. This tool takes Mermaid diagram code or other supported diagram formats and returns a URL to the rendered diagram. The URL can be used to display the diagram in web browsers or embedded in documents. Supported diagram types: mermaid, plantuml, graphviz, c4plantuml, excalidraw, erd, svgbob, nomnoml, wavedrom, blockdiag, seqdiag, actdiag, nwdiag, packetdiag, rackdiag, umlet, ditaa, vega, vegalite, bpmn, bytefield, d2, dbml, pikchr, structurizr, symbolator, tikz, wireviz. Supported output formats: svg, png, pdf, jpeg, base64.",
 	}, GenerateDiagramURL)
 
 	mcp.AddTool(server, &mcp.Tool{
 		Name:        "download_diagram",
-		Description: "Download a diagram image to a local file. This tool converts diagram code (such as Mermaid) into an image file and saves it to the specified location. Useful for generating diagrams for presentations, documentation, or other offline use. Includes an option to scale SVG output.",
+		Description: "Download a diagram image to a local file. This tool converts diagram code (such as Mermaid) into an image file and saves it to the specified location. Useful for generating diagrams for presentations, documentation, or other offline use. Includes an option to scale SVG output. Supported diagram types: mermaid, plantuml, graphviz, c4plantuml, excalidraw, erd, svgbob, nomnoml, wavedrom, blockdiag, seqdiag, actdiag, nwdiag, packetdiag, rackdiag, umlet, ditaa, vega, vegalite, bpmn, bytefield, d2, dbml, pikchr, structurizr, symbolator, tikz, wireviz. Supported output formats: svg, png, pdf, jpeg, base64.",
 	}, DownloadDiagram)
 
 	if err := server.Run(context.Background(), mcp.NewStdioTransport()); err != nil {
